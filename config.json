@@ -8,9 +8,7 @@
     "server": {
         "host": "0.0.0.0",
         "port": 8000,
-        "store_path": "tube.db",
-        "upload_path": "uploads",
-        "max_upload_size": 104857600
+        "store_path": "tube.db"
     },
     "thumbnailer": {
         "timeout": 60
@@ -18,16 +16,5 @@
     "transcoder": {
         "timeout": 300,
         "sizes": null
-    },
-    "feed": {
-        "external_url": "",
-        "title": "Feed Title",
-        "link": "http://your-url.example/about",
-        "description": "Feed Description",
-        "author": {
-            "name": "Author Name",
-            "email": "author@somewhere.example"
-        },
-        "copyright": "Copyright Text"
     }
 }

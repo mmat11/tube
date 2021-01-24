@@ -11,7 +11,6 @@ type Config struct {
 	Server      *ServerConfig      `json:"server"`
 	Thumbnailer *ThumbnailerConfig `json:"thumbnailer"`
 	Transcoder  *TranscoderConfig  `json:"transcoder"`
-	Feed        *FeedConfig        `json:"feed"`
 }
 
 // PathConfig settings for media library path.
@@ -22,11 +21,9 @@ type PathConfig struct {
 
 // ServerConfig settings for App Server.
 type ServerConfig struct {
-	Host          string `json:"host"`
-	Port          int    `json:"port"`
-	StorePath     string `json:"store_path"`
-	UploadPath    string `json:"upload_path"`
-	MaxUploadSize int64  `json:"max_upload_size"`
+	Host      string `json:"host"`
+	Port      int    `json:"port"`
+	StorePath string `json:"store_path"`
 }
 
 // ThumbnailerConfig settings for Transcoder
@@ -43,19 +40,6 @@ type TranscoderConfig struct {
 	Sizes   Sizes `json:"sizes"`
 }
 
-// FeedConfig settings for App Feed.
-type FeedConfig struct {
-	ExternalURL string `json:"external_url"`
-	Title       string `json:"title"`
-	Link        string `json:"link"`
-	Description string `json:"description"`
-	Author      struct {
-		Name  string `json:"name"`
-		Email string `json:"email"`
-	} `json:"author"`
-	Copyright string `json:"copyright"`
-}
-
 // DefaultConfig returns Config initialized with default values.
 func DefaultConfig() *Config {
 	return &Config{
@@ -66,11 +50,9 @@ func DefaultConfig() *Config {
 			},
 		},
 		Server: &ServerConfig{
-			Host:          "0.0.0.0",
-			Port:          8000,
-			StorePath:     "tube.db",
-			UploadPath:    "uploads",
-			MaxUploadSize: 104857600,
+			Host:      "0.0.0.0",
+			Port:      8000,
+			StorePath: "tube.db",
 		},
 		Thumbnailer: &ThumbnailerConfig{
 			Timeout: 60,
@@ -78,9 +60,6 @@ func DefaultConfig() *Config {
 		Transcoder: &TranscoderConfig{
 			Timeout: 300,
 			Sizes:   Sizes(nil),
-		},
-		Feed: &FeedConfig{
-			ExternalURL: "http://localhost:8000",
 		},
 	}
 }
