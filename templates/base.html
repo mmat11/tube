@@ -8,8 +8,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/static/theme.css">
-    <link rel="stylesheet" type="text/css" href="/static/upload.css">
-    <link rel="stylesheet" type="text/css" href="/static/import.css">
 
     {{if $playing.ID}}
     <meta property="og:title" content="{{$playing.Title}}"/>
@@ -30,14 +28,12 @@
 <body>
   <nav>
     <a href="/">Tube</a>
-    <a class="centered" style="text-indent: 0;" href="/upload">Upload</a>
   </nav>
   <main>
     {{template "content" .}}
   </main>
   <footer>
-    <p><a href="https://github.com/prologic/tube">Tube</a> is CopyRight © 2020 <a href="https://github.com/prologic">James Mills / prologic</a>. All Rights Reserved.</p>
-    <p>All Content herein Public Domain and User Contributed.</p>
+    <a href="https://github.com/mmat11/tube">Tube</a>
   </footer>
 </body>
 {{ template "scripts" . }}

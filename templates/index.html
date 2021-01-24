@@ -9,7 +9,6 @@
     <a {{ if eq $.Quality "720p" }}class="active"{{ end }} href="/v/{{ $playing.ID }}?quality=720p">720p</a>
     <a {{ if eq $.Quality "480p" }}class="active"{{ end }} href="/v/{{ $playing.ID }}?quality=480p">480p</a>
     <a {{ if eq $.Quality "360p" }}class="active"{{ end }} href="/v/{{ $playing.ID }}?quality=360p">360p</a>
-    <a {{ if eq $.Quality "240p" }}class="active"{{ end }} href="/v/{{ $playing.ID }}?quality=240p">240p</a>
   </div>
 
   {{ if $playing.ID }}

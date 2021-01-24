@@ -10,7 +10,6 @@ import (
 	"time"
 
 	"github.com/dhowden/tag"
-	"github.com/prologic/tube/utils"
 )
 
 // Video represents metadata for a single video.
@@ -80,7 +79,7 @@ func ParseVideo(p *Path, name string) (*Video, error) {
 		v.ThumbType = pic.MIMEType
 	} else {
 		thumbFn := fmt.Sprintf("%s.jpg", strings.TrimSuffix(pth, filepath.Ext(pth)))
-		if utils.FileExists(thumbFn) {
+		if FileExists(thumbFn) {
 			data, err := ioutil.ReadFile(fmt.Sprintf("%s.jpg", strings.TrimSuffix(pth, filepath.Ext(pth))))
 			if err != nil {
 				return nil, err
@@ -91,4 +90,13 @@ func ParseVideo(p *Path, name string) (*Video, error) {
 	}
 
 	return v, nil
+}
+
+func FileExists(name string) bool {
+	if _, err := os.Stat(name); err != nil {
+		if os.IsNotExist(err) {
+			return false
+		}
+	}
+	return true
 }
